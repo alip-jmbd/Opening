@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabung Grup</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        :root {
+            --primary-color: #a855f7;
+            --secondary-color: #ec4899;
+            --bg-dark: #111827;
+            --card-bg: rgba(31, 41, 55, 0.5);
+            --text-light: #f9fafb;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-aurora {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vh;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), #3b82f6);
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.3;
+            transform: translate(-50%, -50%);
+            animation: moveAurora 20s infinite alternate cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        @keyframes moveAurora {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg) scale(1);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg) scale(1.4);
+            }
+        }
+
+        .content-card {
+            position: relative;
+            z-index: 2;
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            animation: popIn 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            opacity: 0;
+            transform: scale(0.8);
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 1.5rem auto;
+            background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        .icon svg {
+            width: 36px;
+            height: 36px;
+            color: white;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 25px rgba(168, 85, 247, 0.5); }
+            50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(236, 72, 153, 0.5); }
+            100% { transform: scale(1); box-shadow: 0 0 25px rgba(168, 85, 247, 0.5); }
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        p span {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--text-light);
+            padding: 0.2rem 0.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            display: inline-block;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            background-image: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            box-shadow: 0 5px 20px rgba(168, 85, 247, 0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(236, 72, 153, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="background-aurora"></div>
+
+    <div class="content-card">
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.898 20.562L16.25 22.5l-.648-1.938a2.25 2.25 0 01-1.476-1.476L12 18.75l1.938-.648a2.25 2.25 0 011.476-1.476L17.25 15l.648 1.938a2.25 2.25 0 011.476 1.476L21.375 18.75l-1.938.648a2.25 2.25 0 01-1.476 1.476z" />
+            </svg>
+        </div>
+        <h1>Mau Webnya?</h1>
+        <p>Masuk grup dan ketik <span>.templatepayment</span> untuk mendapatkan akses.</p>
+        <a href="https://chat.whatsapp.com/IURMj1zIlzH3syjfnaNmjK?mode=ac_c" class="cta-button">Masuk Grup</a>
+    </div>
+</body>
+</html>
